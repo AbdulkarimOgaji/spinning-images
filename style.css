@@ -75,7 +75,7 @@ section {
 }
 
 .col-3 {
-  width: 33.33%;
+  flex-grow: 1;
 }
 
 .flip-direction {
@@ -88,12 +88,12 @@ section {
 
 @media (max-width: 990px) {
   .swiper:has(.first-column) {
-    display: none;
+    width: 0px;
   }
 }
 
 @media (max-width: 500px) {
   .swiper:has(.second-column) {
-    display: none;
+    width: 0px;
   }
 }

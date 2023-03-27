@@ -70,14 +70,6 @@ const swiper = new Swiper(".swiper", {
   mousewheel: false,
   grabCursor: false,
   noSwiping: true,
-  // freeMode: true,
-  // freeModeMomentum: true,
   preventInteractionOnTransition: true,
-  // resistance: false,
-  // scrollbar: {
-  //   draggable: false,
-  // },
-  // simulateTouch: false,
-  // updateOnWindowResize: true,
   speed: 20000,
 });
