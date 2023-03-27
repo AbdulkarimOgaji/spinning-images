@@ -5,10 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spinning Images</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Spinning Images</h1>
+    <h1 class="title">Spinning Images</h1>
+    <main>
+      <section>
+        <div class="col-3">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide first-column"></div>
+              <div class="swiper-slide first-column"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="swiper flip-direction">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide second-column"></div>
+              <div class="swiper-slide second-column"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide third-column"></div>
+              <div class="swiper-slide third-column"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
