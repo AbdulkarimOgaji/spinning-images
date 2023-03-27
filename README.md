@@ -10,5 +10,5 @@ A small project demonstrating how to create a smooth vertical continuous slide o
 - [x] All columns should move at the same speed
 - [x] Middle column should move in opposite direction
 - [x] Slider should not respond to any mouse/touch events
-- [ ] Slider should be responsive, Three columns on Desktop, Two on tablet and One on mobile
-- [ ] Display the heights of each column as well as maximum height that can be reached without it glitching
+- [x] Slider should be responsive, Three columns on Desktop, Two on tablet and One on mobile
+- [x] Display the heights of each column as well as maximum height that can be reached without it glitching

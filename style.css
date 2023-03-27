@@ -50,7 +50,6 @@ h6 {
 
 main {
   max-width: 1200px;
-  border: 2px solid red;
   margin-inline: auto;
 }
 
@@ -84,6 +83,10 @@ section {
 
 .flip-direction img {
   transform: rotate(180deg);
+}
+
+p {
+  text-align: center;
 }
 
 @media (max-width: 990px) {

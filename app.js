@@ -2,6 +2,11 @@ console.log("running script");
 const firstColumnSlides = document.querySelectorAll(".first-column");
 const secondColumnSlides = document.querySelectorAll(".second-column");
 const thirdColumnSlides = document.querySelectorAll(".third-column");
+
+const firstColumnHeight = document.getElementById("first-column-height");
+const secondColumnHeight = document.getElementById("second-column-height");
+const thirdColumnHeight = document.getElementById("third-column-height");
+
 const images = [
   "https://s3.amazonaws.com/com.dbacommunity.images/undefinedMLB%20SGP.png",
   "https://s3.amazonaws.com/com.dbacommunity.images/undefinedHerro%20Max%20Ladder.PNG",
@@ -33,8 +38,40 @@ const images = [
   "https://s3.amazonaws.com/com.dbacommunity.images/undefinedRap%2031%2B.png",
 ];
 
+async function setHeights() {
+  firstColumnHeight.innerText = "Waiting for images to load";
+  secondColumnHeight.innerText = "Waiting for images to load";
+  thirdColumnHeight.innerText = "Waiting for images to load";
+
+  // wait for all images to load
+  console.log("waiting started");
+  await Promise.all(
+    Array.from(document.querySelectorAll("img")).map((img) => {
+      if (img.complete) return Promise.resolve(img.naturalHeight !== 0);
+      return new Promise((resolve) => {
+        img.addEventListener("load", () => resolve(true));
+        img.addEventListener("error", () => resolve(false));
+      });
+    })
+  );
+
+  console.log("waiting stopped");
+
+  firstColumnHeight.innerText = Array.from(
+    document.querySelectorAll(".first-column img")
+  ).reduce((acc, curr) => acc + curr.naturalHeight, 0);
+
+  secondColumnHeight.innerText = Array.from(
+    document.querySelectorAll(".second-column img")
+  ).reduce((acc, curr) => acc + curr.naturalHeight, 0);
+
+  thirdColumnHeight.innerText = Array.from(
+    document.querySelectorAll(".third-column img")
+  ).reduce((acc, curr) => acc + curr.naturalHeight, 0);
+}
+
 firstColumnSlides.forEach((el) => {
-  images.slice(0, 9).forEach((url) => {
+  images.slice(0, 5).forEach((url) => {
     let img = document.createElement("img");
     img.src = url;
     el.appendChild(img);
@@ -71,5 +108,7 @@ const swiper = new Swiper(".swiper", {
   grabCursor: false,
   noSwiping: true,
   preventInteractionOnTransition: true,
-  speed: 20000,
+  speed: 30000,
 });
+
+setHeights();
