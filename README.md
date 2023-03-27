@@ -12,3 +12,7 @@ A small project demonstrating how to create a smooth vertical continuous slide o
 - [x] Slider should not respond to any mouse/touch events
 - [x] Slider should be responsive, Three columns on Desktop, Two on tablet and One on mobile
 - [x] Display the heights of each column as well as maximum height that can be reached without it glitching
+
+## Code Pen
+
+- Link [here](https://codepen.io/AbdulkarimOgaji/pen/KKxJjJV)
